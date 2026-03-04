@@ -36,7 +36,7 @@
   --txt-semibold: 600;
   --txt-bold: 700;
   --link: #7fd8a6;
-  --link-hgl: #a6f4c5;
+  --link-hgl: #89d8aa;
   --link-visited: #9be0b6;
   --link-underline: 1px solid transparent;
   --int-btn-bg: #18221d;
