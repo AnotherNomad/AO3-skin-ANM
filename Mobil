@@ -1,3 +1,12 @@
+/*============================================================
+
+                    ✿✿✿ Rose Pine ✿✿✿ 
+          MOBILE / NARROW SCREENS (max-width: 42em)
+
+============================================================*/
+/* credits to Neos by Zerafinacss - https://github.com/ZerafinaCSS/neos */
+
+/* centered headings */
 h2.heading,
 h2.heading+h3.heading:not(.landmark) {
   display: inline-block;
@@ -6,10 +15,16 @@ h2.heading+h3.heading:not(.landmark) {
   text-align: center;
 }
 
+/*============================================================
+>> 03 REGION: HEADER
+============================================================*/
+
+/* title fix */
 #header .heading a::before {
   content: "AO3\00a0✿";
 }
 
+/* header dropdown menus */
 #header .menu {
   width: 96%;
   max-width: unset;
@@ -20,38 +35,49 @@ h2.heading+h3.heading:not(.landmark) {
   margin: 0 2%;
 }
 
+/* center dropdown menu text */
 #header .menu li {
   text-align: center;
 }
 
+/* header icons positioned in top right corner */
 #login,
 #greeting {
   order: 2;
 }
 
+/* primary navigation positioning */
 #header nav:has(> .primary) {
   min-width: 100%;
   max-width: 100%;
   border-top: var(--border-width) solid;
 }
 
+/* header search bar positioning - below header/icons to prevent overlap */
 #header li.search {
-  position: absolute;
-  top: 0.7em;
+  position: relative; /* no longer absolute */
+  width: 95%;
+  margin: 0.5em auto 1em auto; /* center below header row with spacing */
+  top: 0;
+  z-index: 10;
 }
 
+/* reduce search bar width */
 #header #search .text {
-  width: 35vw;
+  width: 100%;
   min-width: unset;
   max-width: unset;
   transition: width 0.15s;
 }
 
-#header #search .text:is(:focus,
-:active) {
-  width: 95vw;
-  max-width: unset;
+/* search bar width when focused/active */
+#header #search .text:is(:focus, :active) {
+  width: 100%;
 }
+
+/*============================================================
+>> 04 REGION: DASHBOARD
+============================================================*/
 
 #dashboard,
 #dashboard.own {
@@ -80,6 +106,7 @@ h2.heading+h3.heading:not(.landmark) {
 #dashboard a,
 #dashboard span {
   display: inline-block;
+  /* put menu items next to each other */
   margin-block: var(--border-width);
 }
 
@@ -91,6 +118,11 @@ h2.heading+h3.heading:not(.landmark) {
   transform: translate(-50%, 0);
 }
 
+/*============================================================
+>> 05 REGION: MAIN
+============================================================*/
+
+/* DO NOT DELETE! */
 .filtered .index,
 form.filters,
 form dd,
@@ -104,6 +136,10 @@ form.inbox {
   max-width: 100%;
 }
 
+/*============================================================
+>> 06 REGION: FOOTER
+============================================================*/
+
 #footer {
   padding-block: 5%;
 }
@@ -116,10 +152,17 @@ form.inbox {
   flex-basis: 47.5%;
 }
 
+/* space under the first row */
+/* required as AO3 doesn't allow row-gap */
 #footer ul li.module:nth-of-type(-n+2) {
   margin-bottom: 5%;
 }
 
+/*============================================================
+>> 08 ACTIONS: BUTTONS
+============================================================*/
+
+/* center navigation buttons */
 ul.navigation.actions,
 p.navigation.actions {
   float: none;
@@ -135,19 +178,39 @@ p.navigation.actions {
   flex-direction: column;
 }
 
+/*============================================================
+>> 10 TYPES AND GROUPS OF DATA
+============================================================*/
+
+/* reduce size primary icon size */
 .icon {
   width: 85px;
   height: 85px;
 }
 
+/*============================================================
+>> 11 GROUP: LISTBOX
+============================================================*/
+
+/* tagset media listboxes */
 .tagset .media .listbox {
   width: 100%;
   margin-right: 0;
 }
 
+/*============================================================
+>> 13 GROUP: BLURB
+============================================================*/
+
+/* bookmark blurb header */
 .bookmark .short .header {
   align-items: flex-start;
 }
+
+/*============================================================
+>> 17 ZONE: HOME
+============================================================*/
+/* rearrange the elements on primary (home) pages */
 
 .home .header h2,
 .home .header ul.actions {
@@ -186,6 +249,11 @@ p.navigation.actions {
   order: 6;
 }
 
+/*============================================================
+>> 18 ZONE: SEARCH/BROWSE
+============================================================*/
+
+/* filters with JavaScript */
 .javascript form.filters {
   overflow-y: visible;
   max-height: unset;
@@ -193,15 +261,20 @@ p.navigation.actions {
 }
 
 .region:has(ol.pagination.actions) form.filters {
-  background-color: var(--bg5);
-  border: var(--border-width) solid var(--border1);
-  box-shadow: var(--shadow-header);
+    background-color: var(--bg5);
+    border: var(--border-width) solid var(--border1);
+    box-shadow: var(--shadow-header);
 }
 
 .javascript {
-  background: var(--bg1);
+    background: var(--bg1);
 }
 
+/*============================================================
+>> Z3 MISCELLANEOUS
+============================================================*/
+
+/* fix the Fandoms Index */
 .media-index .media .listbox {
   width: 100%;
 }
